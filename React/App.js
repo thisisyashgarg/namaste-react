@@ -1,9 +1,10 @@
-// PARCEL is a BEAST
+// PARCEL IS A BEAST
+// creates a server
 // uses HMR - Hot Module Reloading (live server feature)
 // uses File Watcher Algorithm (in C++)
 // minified the code, bundling
 // clearing the console logs from code
-// Manages dev and prod build
+// manages dev and prod build
 // Image Optimisation
 // caching while development
 // compression
@@ -12,6 +13,9 @@
 // manages the different port numbers
 // consistent hashing algorithm
 // zero config bundeler
+//
+///
+// transitive dependencies
 
 import React from "react";
 import ReactDOM from "react-dom/client";
