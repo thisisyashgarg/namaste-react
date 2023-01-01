@@ -1,6 +1,6 @@
 // PARCEL IS A BEAST
 // creates a server
-// uses HMR - Hot Module Reloading (live server feature)
+// uses HMR - Hot Module Replacing (live server feature)
 // uses File Watcher Algorithm (in C++)
 // minified the code, bundling
 // clearing the console logs from code
