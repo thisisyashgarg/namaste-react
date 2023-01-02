@@ -1,0 +1,34 @@
+PARCEL IS A BEAST
+// creates a server, uses HMR - Hot Module Replacing (live server feature)
+// uses File Watcher Algorithm (in C++)
+// minified the code, bundling
+// clearing the console logs from code
+// manages dev and prod build
+// Image Optimisation
+// caching while development
+// compression
+// compatible with older version of browsers
+// https on dev
+// manages the different port numbers
+// consistent hashing algorithm
+// zero config bundeler
+// tree shaking
+
+// createElement => Object => HTML DOM
+
+// JSX => createElement => Object => HTML DOM
+
+// <> doesnt work on browser console
+// babel knows <>
+
+// jsx is not html inside js, this syntax is just html like
+
+// .createElement is an object, converted to html and puts it into react dom
+
+
+/**DIFF BETWEEN HTML AND JSX
+ * camelcase notation in  attributes in jsx
+ */
+
+Functional Component
+1. name starts with capital letter

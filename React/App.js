@@ -1,34 +1,53 @@
-// PARCEL IS A BEAST
-// creates a server
-// uses HMR - Hot Module Replacing (live server feature)
-// uses File Watcher Algorithm (in C++)
-// minified the code, bundling
-// clearing the console logs from code
-// manages dev and prod build
-// Image Optimisation
-// caching while development
-// compression
-// compatible with older version of browsers
-// https on dev
-// manages the different port numbers
-// consistent hashing algorithm
-// zero config bundeler
-//
-///
 // transitive dependencies
 
 import React from "react";
 import ReactDOM from "react-dom/client";
+const test = 10;
 
-const heading1 = React.createElement(
+// Bad way of creating element
+const headingReact = React.createElement(
   "h1",
-  { id: "title1" },
+  { id: "title1", key: "h1" },
   "Namaste React1 from Parcel"
 );
-const heading2 = React.createElement("h1", { id: "title2" }, "Namaste React2");
-const container = React.createElement("div", { id: "container" }, [
-  heading1,
-  heading2,
-]);
+
+// React Element
+//good way by jsx
+const headingJSX = (
+  <h1 id="title" key="h1" tabIndex={1} className="title">
+    Hello World
+  </h1>
+);
+
+const HeadingJSX2 = () => {
+  return (
+    <h1 id="title" key="h2" tabIndex={1} className="title">
+      Hello World
+    </h1>
+  );
+};
+
+// React Components - Functional(new) and Class Based Comp(old)
+
+// Functional Comp, name starts with capital letter
+const HeaderComponent = () => {
+  return (
+    <div>
+      {headingJSX}
+      {console.log(test)}
+      {test}
+      {HeadingJSX2()}
+      <HeadingJSX2 />
+      <h1>I am Functional Component</h1>
+      <h2>I am H2 </h2>
+    </div>
+  );
+};
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(container);
+
+// this is used for react element
+// root.render(headingJSX);
+
+// this is for react components
+root.render(<HeaderComponent />);
