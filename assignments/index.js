@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import logo from "../react-logo.png";
-import profile from "../user.png";
+import logo from "react-logo.png";
+import profile from "user.png";
 
 function Title() {
   return <h1>Title Component</h1>;
