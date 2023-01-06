@@ -21,9 +21,14 @@ const headingJSX = (
 
 const HeadingJSX2 = () => {
   return (
-    <h1 id="title" key="h2" tabIndex={1} className="title">
-      Hello World
-    </h1>
+    <div>
+      <h1 id="title" key="h2" tabIndex={1} className="title">
+        Hello World, Functional h1
+      </h1>
+      <h2 id="title" key="h3" tabIndex={1} className="title">
+        Hello World, Functional h2
+      </h2>
+    </div>
   );
 };
 
@@ -34,10 +39,12 @@ const HeaderComponent = () => {
   return (
     <div>
       {headingJSX}
-      {console.log(test)}
       {test}
       {HeadingJSX2()}
+      {/* both are same */}
       <HeadingJSX2 />
+      {<HeadingJSX2></HeadingJSX2>}
+      {/* both are same */}
       <h1>I am Functional Component</h1>
       <h2>I am H2 </h2>
     </div>
