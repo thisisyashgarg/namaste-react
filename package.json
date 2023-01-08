@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "## Learnings of Namaste React by Akshay Saini",
   "scripts": {
-    "start": "parcel React/index.html",
-    "build": "parcel build React/index.html",
+    "start": "parcel Food-Delivery-App/index.html",
+    "build": "parcel build Food-Delivery-App/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
