@@ -8,7 +8,7 @@ import { useState } from "react";
 
 function filterData(searchText, restaurants) {
   const filterData = restaurants.filter((restaurant) =>
-    restaurantList.data.name.includes(searchText)
+    restaurant.data.name.includes(searchText)
   );
 
   return filterData;
@@ -17,6 +17,10 @@ function filterData(searchText, restaurants) {
 const Body = () => {
   const [restaurants, setRestaurants] = useState(restaurantList);
   const [searchText, setSearchText] = useState("");
+
+  // searchText is the local state variable, setSearchText is a function,
+  // hooks are js functions, usestate is a hook
+  // usestate returns an array [local state variable, function to update the variable]
 
   return (
     <>
@@ -27,6 +31,7 @@ const Body = () => {
           placeholder="Search"
           value={searchText}
           onChange={(e) => {
+            //e.target.value is whatever i write
             setSearchText(e.target.value);
           }}
         />
