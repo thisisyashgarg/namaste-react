@@ -1,4 +1,4 @@
-import { IMG_CDN_URL } from "../contents";
+import { IMG_CDN_URL } from "../constants";
 
 const RestrauntCard = ({
   name,
