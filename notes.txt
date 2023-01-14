@@ -32,3 +32,5 @@ PARCEL IS A BEAST
 
 Functional Component
 1. name starts with capital letter
+
+only js expressions are rendered in curly braces not js statement
