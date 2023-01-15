@@ -29,25 +29,29 @@ const Body = () => {
     //api call
     getRestaurants();
   }, []);
-
-  async function getRestaurants() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7252114&lng=77.06939799999999&page_type=DESKTOP_WEB_LISTING"
-    );
-    const json = await data.json();
-    console.log("api call made");
-    console.log(json);
-    setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-  }
-
   //[] is dependency array,
+  // if we dont pass anything in dependency, it renders every time comp is rendered
   //[] empt array, called once => after render cause its a callback
   //[] non empty array => once after render + when depnedency changes
 
+  async function getRestaurants() {
+    try {
+      const data = await fetch(
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7252114&lng=77.06939799999999&page_type=DESKTOP_WEB_LISTING"
+      );
+      const json = await data.json();
+      console.log("api call made");
+      console.log(json);
+      setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+      setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    } catch {
+      console.error(error);
+    }
+  }
+
   //early return, not rendering anything
-  if (!allRestaurants) return null;
-  if (filteredRestaurants?.length === 0) return <h1>No restaurants found!</h1>;
+  // if (!allRestaurants) return null;
+  // if (filteredRestaurants?.length === 0) return <h1>No restaurants found!</h1>;
 
   return allRestaurants.length === 0 ? (
     <Shimmer />
