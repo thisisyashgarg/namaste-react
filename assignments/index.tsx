@@ -1,7 +1,6 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import logo from "react-logo.png";
-import profile from "user.png";
+import ReactDOM from "react-dom/client";
+import Header from "../Food-Delivery-App/src/components/Header";
 
 function AppLayout() {
   return {

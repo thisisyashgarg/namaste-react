@@ -1,7 +1,9 @@
+import React from "react";
 import { restaurantList } from "../constants";
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+
 // import fetch from "node-fetch";
 
 // What is state
@@ -45,7 +47,7 @@ const Body = () => {
       setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
       setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
     } catch {
-      console.error(error);
+      console.error(Error);
     }
   }
 

@@ -1,3 +1,4 @@
+import React from "react";
 import shimmer from "../images/shimmer.png";
 const Shimmer = () => {
   return (
