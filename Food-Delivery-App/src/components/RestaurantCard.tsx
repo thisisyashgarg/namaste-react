@@ -12,8 +12,8 @@ const RestrauntCard = ({
     <div className="card">
       <img src={IMG_CDN_URL + cloudinaryImageId} />
       <h2>{name}</h2>
-      <h3>{cuisines.join(", ")}</h3>
-      <h4>{lastMileTravelString} away</h4>
+      <h3 className="cuisines">{cuisines.join(", ")}</h3>
+      <h4 className="distance">{lastMileTravelString} away</h4>
     </div>
   );
 };

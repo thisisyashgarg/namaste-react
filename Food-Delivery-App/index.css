@@ -1,8 +1,14 @@
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   margin: 10px;
-  border: 1px solid black;
+  border: 2px solid rgb(175, 175, 175);
+  border-radius: 5px;
 }
 
 .nav-items > ul {
@@ -15,21 +21,88 @@
 }
 
 .logo {
-  width: 100px;
+  /* width: inherit; */
+  height: 55px;
+  border-radius: 25%;
+  padding: 0.5rem 0.5rem;
 }
 
 .card {
   width: 200px;
-  border: 1px solid black;
+  border: 2px solid rgb(175, 175, 175);
   padding: 10px;
   margin: 10px;
+  border-radius: 5px;
 }
 
 .card > img {
+  border-radius: 5px;
   width: 100%;
 }
 
 .restaurant-list {
   display: flex;
   flex-wrap: wrap;
+}
+
+.menu {
+  display: flex;
+  padding: 0.85rem;
+}
+
+.res-cards {
+  text-decoration: none;
+  color: black;
+}
+
+.res-cards:hover {
+  color: rgb(192, 125, 0);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: rgb(192, 125, 0);
+}
+
+.search-input,
+.search-btn {
+  margin: 0.8rem;
+}
+
+.distance {
+  color: grey;
+}
+
+.cuisines {
+  font-weight: 400;
+}
+
+.footer {
+  text-align: center;
+  color: grey;
+}
+.search-container {
+  text-align: center;
+}
+
+.res-details {
+  border: 2px solid rgb(175, 175, 175);
+  height: fit-content;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-right: 2rem;
+}
+
+.menu-img {
+  border-radius: 5px;
+}
+
+.dishes {
+  border: 2px solid rgb(175, 175, 175);
+  border-radius: 5px;
+  padding: 0 1rem;
 }
