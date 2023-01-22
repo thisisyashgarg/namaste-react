@@ -51,10 +51,6 @@ const Body = () => {
     }
   }
 
-  //early return, not rendering anything
-  // if (!allRestaurants) return null;
-  // if (filteredRestaurants?.length === 0) return <h1>No restaurants found!</h1>;
-
   return allRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
