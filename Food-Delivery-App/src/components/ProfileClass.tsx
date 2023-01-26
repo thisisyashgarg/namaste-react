@@ -6,7 +6,7 @@ export default class Profile extends React.Component {
     this.state = {
       userInfo: {},
     };
-    console.log("child constructor" + " " + this.props.name);
+    console.log("child constructor" + " ");
   }
 
   async componentDidMount() {
@@ -33,7 +33,7 @@ export default class Profile extends React.Component {
   }
 
   render() {
-    console.log(" child render" + "  " + this.props.name);
+    console.log(" child render" + "  ");
     // const { name } = this.props;
     // const { count, count2 } = this.state;
     const { avatar_url, name, location } = this.state.userInfo;

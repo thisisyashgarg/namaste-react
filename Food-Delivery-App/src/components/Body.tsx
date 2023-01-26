@@ -3,27 +3,14 @@ import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-
-// import fetch from "node-fetch";
-
-// What is state
-// what is React Hooks? - functions,
-// What is useState
-
-function filterData(searchText, restaurants) {
-  const filterData = restaurants.filter((restaurant) =>
-    restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase())
-  );
-  return filterData;
-}
+import { filterData } from "../utils/helper";
+import useOnline from "../utils/useOnline";
 
 const Body = () => {
-  // searchText is the local state variable, setSearchText is a function,
-  // hooks are js functions, usestate is a hook
-  // usestate returns an array [local state variable, function to update the variable]
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const online = useOnline();
 
   console.log("render");
 
@@ -51,7 +38,16 @@ const Body = () => {
     }
   }
 
-  return allRestaurants.length === 0 ? (
+  if (!online) {
+    return (
+      <h1>Oops, you are offline, please check your internet connection</h1>
+    );
+  }
+
+  //early return
+  if (!allRestaurants) return null;
+
+  return allRestaurants?.length === 0 ? (
     <Shimmer />
   ) : (
     <>
@@ -66,6 +62,7 @@ const Body = () => {
             setSearchText(e.target.value);
           }}
         />
+
         <button
           className="search-btn"
           onClick={() => {
