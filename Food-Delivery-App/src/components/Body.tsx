@@ -5,8 +5,9 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
 import useOnline from "../utils/useOnline";
+import { FETCH_ALL_RESTAURANTS } from "../constants";
 
-const Body = () => {
+function Body() {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
@@ -25,9 +26,7 @@ const Body = () => {
 
   async function getRestaurants() {
     try {
-      const data = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
-      );
+      const data = await fetch(FETCH_ALL_RESTAURANTS);
       const json = await data.json();
       console.log("api call made");
       console.log(json);
@@ -51,11 +50,11 @@ const Body = () => {
     <Shimmer />
   ) : (
     <>
-      <div className="search-container">
+      <div className=" p-4">
         <input
           type="text"
-          className="search-input"
-          placeholder="Search"
+          className="mx-3 p-1 px-2 border border- rounded-sm "
+          placeholder="Type here..."
           value={searchText}
           onChange={(e) => {
             //e.target.value is whatever i write
@@ -64,7 +63,7 @@ const Body = () => {
         />
 
         <button
-          className="search-btn"
+          className=" p-1 px-2 bg-gray-700 text-white rounded-md"
           onClick={() => {
             //need to filter the data
             const data = filterData(searchText, allRestaurants);
@@ -75,7 +74,7 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className="restaurant-list">
+      <div className="flex flex-wrap m-0 p-0 ">
         {filteredRestaurants.map((restaurant) => {
           return (
             <Link
@@ -90,6 +89,6 @@ const Body = () => {
       </div>
     </>
   );
-};
+}
 
 export default Body;

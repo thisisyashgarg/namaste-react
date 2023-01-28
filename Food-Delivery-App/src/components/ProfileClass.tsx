@@ -10,13 +10,6 @@ export default class Profile extends React.Component {
   }
 
   async componentDidMount() {
-    //api calls
-    // const data = await fetch("https://api.github.com/users/thisisyashgarg");
-    // const json = await data.json();
-    // console.log(json);
-    // this.setState({
-    //   userInfo: json,
-    // });
     this.timer = setInterval(() => {
       console.log("namaste react");
     }, 1000);
