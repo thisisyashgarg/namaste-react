@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import React from "react";
 import { Link } from "react-router-dom";
-import useOnline from "../utils/useOnline";
+import { UserContext } from "../utils/UserContext";
 
 const Title = () => {
   return (
@@ -19,7 +19,8 @@ const Title = () => {
 
 const Header = () => {
   const [isLoggedIn, setIsLoggiedIn] = useState("true");
-  const isOnline = useOnline();
+
+  const { user } = useContext(UserContext);
 
   return (
     <div className="flex justify-between bg-gray-700 ">
@@ -27,32 +28,35 @@ const Header = () => {
 
       <div>
         <ul className="flex py-4 px-4 text-white">
-          <li className="px-2">
+          <li className="px-2 hover:text-orange-400">
             <Link to="/">Home</Link>
           </li>
-          <li className="px-2">
+          <li className="px-2 hover:text-orange-400">
             <Link to="/about">About</Link>
           </li>
-          <li className="px-2">
+          <li className="px-2 hover:text-orange-400">
             <Link to="/contact">Contact</Link>
           </li>
-          <li className="px-2">
+          <li className="px-2 hover:text-orange-400">
             <Link to="/about/profile">Profile</Link>
           </li>
-          <li className="px-2">
+          <li className="px-2 hover:text-orange-400">
             <Link to="/instamart">Instamart</Link>
           </li>
 
-          <li className="px-2">Cart</li>
+          <li className="px-2 hover:text-orange-400">Cart</li>
+
           {isLoggedIn === "true" ? (
-            <li className="px-2">
+            <li className="px-2 hover:text-orange-400">
               <button onClick={() => setIsLoggiedIn("false")}>Logout</button>
             </li>
           ) : (
-            <li className="px-2">
+            <li className="px-2 hover:text-orange-400">
               <button onClick={() => setIsLoggiedIn("true")}>Login</button>
             </li>
           )}
+
+          <li className="px-2 text-gray-300 ">{user.name}</li>
         </ul>
       </div>
     </div>

@@ -1,5 +1,6 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
+import { UserContext } from "./utils/UserContext";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
@@ -14,12 +15,21 @@ const Instamart = lazy(() => import("./components/Instamart"));
 // suspending happpens and error is thrown because react tries to render component before
 
 const AppLayout = () => {
+  const [user, setUser] = useState({
+    name: "Yash Garg",
+    email: "yash.garg@gmail.com",
+  });
   return (
-    <>
+    <UserContext.Provider
+      value={{
+        user: user,
+        setUser: setUser,
+      }}
+    >
       <Header />
       <Outlet />
       <Footer />
-    </>
+    </UserContext.Provider>
   );
 };
 

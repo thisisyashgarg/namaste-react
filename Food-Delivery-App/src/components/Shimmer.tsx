@@ -3,17 +3,6 @@ import shimmer from "../images/shimmer.png";
 const Shimmer = () => {
   return (
     <>
-      <div className=" p-4">
-        <input
-          type="text"
-          className="mx-3 p-1 px-2 border border- rounded-sm "
-          placeholder="Type here..."
-        />
-
-        <button className=" p-1 px-2 bg-gray-700 text-white rounded-md">
-          Search
-        </button>
-      </div>
       <div className="flex flex-wrap m-0 p-0">
         {Array(10)
           .fill("")
