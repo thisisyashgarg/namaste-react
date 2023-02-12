@@ -14,7 +14,7 @@ function Body() {
   const [searchText, setSearchText] = useState("");
   const online = useOnline();
 
-  const { user, setUser } = useContext(UserContext);
+  // const { user, setUser } = useContext(UserContext);
 
   console.log("render");
 
@@ -32,11 +32,11 @@ function Body() {
       const data = await fetch(FETCH_ALL_RESTAURANTS);
       const json = await data.json();
       console.log("api call made");
-      console.log(json);
+      // console.log(json);
       setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
       setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    } catch {
-      console.error(Error);
+    } catch (err) {
+      console.log(err);
     }
   }
 
@@ -55,6 +55,7 @@ function Body() {
     <>
       <div className=" p-4">
         <input
+          data-testid="search-input"
           type="text"
           className="mx-3 p-1 px-2 border  rounded-sm hover:border "
           placeholder="Type here..."
@@ -66,6 +67,7 @@ function Body() {
         />
 
         <button
+          data-testid="search-btn"
           className=" p-1 px-2 bg-gray-700 text-white rounded-md"
           onClick={() => {
             //need to filter the data
@@ -78,7 +80,7 @@ function Body() {
         </button>
       </div>
 
-      <input
+      {/* <input
         className="border"
         onChange={(e) =>
           setUser({
@@ -86,9 +88,9 @@ function Body() {
             email: "dummy@gmail.com",
           })
         }
-      />
+      /> */}
 
-      <div className="flex flex-wrap m-0 p-0 ">
+      <div className="flex flex-wrap m-0 p-0 " data-testid="res-list">
         {filteredRestaurants.map((restaurant) => {
           return (
             <Link

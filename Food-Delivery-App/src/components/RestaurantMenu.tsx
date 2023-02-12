@@ -35,13 +35,14 @@ export default function RestaurantMenu() {
 
       <div className="border p-6 space-y-2">
         <h1 className="text-3xl font-semibold">Menu</h1>
-        <ul>
+        <ul data-testid="menu">
           {Object.values(restaurantMenu?.menu?.items).map(
             (item: { name: string; id: string }) => (
               <div className="border flex m-2 p-3 " key={item.id}>
                 <li className="text-xl">
                   {item.name}
                   <button
+                    data-testid="add-btn"
                     className="bg-green-600 p-2 m-2 rounded-md text-white items-end "
                     onClick={() => addFoodItem(item)}
                   >

@@ -24,16 +24,16 @@ const AppLayout = () => {
   });
   return (
     <Provider store={store}>
-      <UserContext.Provider
+      {/* <UserContext.Provider
         value={{
           user: user,
           setUser: setUser,
         }}
-      >
-        <Header />
-        <Outlet />
-        <Footer />
-      </UserContext.Provider>
+      > */}
+      <Header />
+      <Outlet />
+      <Footer />
+      {/* </UserContext.Provider> */}
     </Provider>
   );
 };
