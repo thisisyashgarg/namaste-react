@@ -39,12 +39,12 @@ function Body() {
     <Shimmer />
   ) : (
     <>
-      <div className=" p-4">
+      <div className="p-4 text-center mt-24">
         <input
           data-testid="search-input"
           type="text"
-          className="mx-3 p-1 px-2 border  rounded-sm hover:border "
-          placeholder="Type here..."
+          className="mx-3 p-2 px-2 w-96 border border-gray-200 rounded-md hover:border  "
+          placeholder="Search"
           value={searchText}
           onChange={(e) => {
             //e.target.value is whatever i write
@@ -54,7 +54,7 @@ function Body() {
 
         <button
           data-testid="search-btn"
-          className=" p-1 px-2 bg-gray-700 text-white rounded-md"
+          className=" p-2 px-4 bg-gray-700 text-white rounded-md hover:shadow-md"
           onClick={() => {
             //need to filter the data
             const data = filterData(searchText, allRestaurants);

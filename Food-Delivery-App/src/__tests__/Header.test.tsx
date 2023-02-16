@@ -30,5 +30,5 @@ test("cart should be empty on rendering header", () => {
   );
   // console.log(header);
   const cart = header.getByTestId("cart");
-  expect(cart.innerHTML).toBe("Cart (0)");
+  expect(cart.innerHTML).toBe("🛒 (0)");
 });

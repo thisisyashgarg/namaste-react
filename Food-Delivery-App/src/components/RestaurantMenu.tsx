@@ -19,7 +19,7 @@ export default function RestaurantMenu() {
   return !restaurantMenu ? (
     <Shimmer />
   ) : (
-    <div className="flex p-6">
+    <div className="flex p-6 mt-24">
       <div className="border p-6">
         <img
           className="w-92 rounded-md"

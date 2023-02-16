@@ -15,7 +15,7 @@ export default function Cart() {
 
   return (
     <>
-      <div className=" flex ">
+      <div className=" flex mt-24 ">
         <h1 className="text-3xl font-semibold p-2">
           Cart ({cartItems.length})
         </h1>

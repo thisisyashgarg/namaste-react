@@ -32,5 +32,5 @@ test("add items to the cart", async () => {
   const cart = resMenu.getByTestId("cart");
 
   fireEvent.click(add[0]);
-  expect(cart.innerHTML).toBe("Cart (1)");
+  expect(cart.innerHTML).toBe("🛒 (1)");
 });
