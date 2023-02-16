@@ -5,8 +5,7 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
 import useOnline from "../utils/useOnline";
-import { FETCH_ALL_RESTAURANTS } from "../constants";
-import { UserContext } from "../utils/UserContext";
+import { getRestaurants } from "../utils/helper";
 
 function Body() {
   const [allRestaurants, setAllRestaurants] = useState([]);
@@ -20,25 +19,12 @@ function Body() {
 
   useEffect(() => {
     //api call
-    getRestaurants();
+    getRestaurants(setAllRestaurants, setFilteredRestaurants);
   }, []);
   //[] is dependency array,
   // if we dont pass anything in dependency, it renders every time comp is rendered
   //[] empt array, called once => after render cause its a callback
   //[] non empty array => once after render + when depnedency changes
-
-  async function getRestaurants() {
-    try {
-      const data = await fetch(FETCH_ALL_RESTAURANTS);
-      const json = await data.json();
-      console.log("api call made");
-      // console.log(json);
-      setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-      setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    } catch (err) {
-      console.log(err);
-    }
-  }
 
   if (!online) {
     return (

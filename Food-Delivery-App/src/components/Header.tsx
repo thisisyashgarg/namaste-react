@@ -3,17 +3,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../utils/UserContext";
 import { useSelector } from "react-redux";
+import Logo from "../images/image_processing20200603-3255-1xy67ze-removebg-preview (1).png";
 
 const Title = () => {
   return (
     <>
       <a href="/">
-        <img
-          data-testid="logo"
-          className="h-16 p-2 rounded-full"
-          alt="logo"
-          src="http://localhost/dummyImage.png"
-        />
+        <img data-testid="logo" className="h-20 p-2" alt="logo" src={Logo} />
       </a>
     </>
   );
@@ -30,7 +26,7 @@ const Header = () => {
   console.log(cartItems);
 
   return (
-    <div className="flex justify-between bg-gray-700 ">
+    <div className="flex justify-between items-center bg-gray-700 ">
       <Title />
 
       <div>

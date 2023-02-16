@@ -12,10 +12,13 @@ export default function Cart() {
   function emptyCart() {
     dispatch(clearCart());
   }
+
   return (
     <>
       <div className=" flex ">
-        <h1 className="text-4xl">Cart ({cartItems.length})</h1>
+        <h1 className="text-3xl font-semibold p-2">
+          Cart ({cartItems.length})
+        </h1>
         <button
           className="p-2 m-2 bg-green-600 text-white rounded-md"
           onClick={() => emptyCart()}

@@ -1,1 +1,1 @@
-export default "dummy.png";
+export default "http://localhost/dummyImage.png";

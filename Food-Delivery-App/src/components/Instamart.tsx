@@ -22,7 +22,7 @@ const Instamart = () => {
   const [visibleSection, setIsVisibleSection] = useState("team");
   return (
     <div>
-      <h1 className="text-3xl p-2 m-2 font-bold"> Instamart</h1>
+      <h1 className="text-3xl p-2 m-2 font-semibold"> Instamart</h1>
       <Section
         title={"About Instamart"}
         description={
@@ -49,12 +49,6 @@ const Instamart = () => {
         isVisible={visibleSection === "career"}
         setIsVisible={() => setIsVisibleSection("career")}
       />
-
-      {/* <AboutInstaMart/>
-      <DetailsofInstaart/>
-      <TeamInstamart/>
-      <Product/>
-      <Careers/> */}
     </div>
   );
 };
