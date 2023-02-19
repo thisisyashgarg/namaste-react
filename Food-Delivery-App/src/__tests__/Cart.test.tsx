@@ -3,7 +3,6 @@ import { StaticRouter } from "react-router-dom/server";
 import { fireEvent, render, waitFor } from "@testing-library/react";
 import { store } from "../utils/store";
 import React from "react";
-import Body from "../components/Body";
 import { RESTAURANT_MENU_DATA } from "../mocks/mockData";
 import "@testing-library/jest-dom";
 import RestaurantMenu from "../components/RestaurantMenu";
@@ -32,5 +31,5 @@ test("add items to the cart", async () => {
   const cart = resMenu.getByTestId("cart");
 
   fireEvent.click(add[0]);
-  expect(cart.innerHTML).toBe("🛒 (1)");
+  expect(cart.innerHTML).toBe("Cart 🛒 (1)");
 });

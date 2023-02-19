@@ -38,7 +38,7 @@ function Body() {
   return allRestaurants?.length === 0 ? (
     <Shimmer />
   ) : (
-    <>
+    <div className="flex flex-col">
       <div className="p-4 text-center mt-24">
         <input
           data-testid="search-input"
@@ -76,7 +76,10 @@ function Body() {
         }
       /> */}
 
-      <div className="flex flex-wrap m-0 p-0 " data-testid="res-list">
+      <div
+        className="flex flex-wrap m-0 p-0 justify-center"
+        data-testid="res-list"
+      >
         {filteredRestaurants.map((restaurant) => {
           return (
             <Link
@@ -89,7 +92,7 @@ function Body() {
           );
         })}
       </div>
-    </>
+    </div>
   );
 }
 

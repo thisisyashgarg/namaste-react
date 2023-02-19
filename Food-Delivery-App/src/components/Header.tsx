@@ -53,7 +53,7 @@ const Header = () => {
           </li> */}
           <li className="px-2 hover:text-orange-400 text-l font-medium">
             <Link to="/cart" data-testid="cart">
-              🛒 ({cartItems.length})
+              Cart 🛒 ({cartItems.length})
             </Link>
           </li>
 
