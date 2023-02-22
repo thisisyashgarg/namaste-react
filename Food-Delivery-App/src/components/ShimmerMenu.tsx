@@ -22,6 +22,28 @@ export default function ShimmerMenu() {
         </div>
       </div>
 
+      <div className="p-4 text-center m-4 ">
+        <input
+          data-testid="search-input"
+          type="text"
+          className="mx-3 p-2 px-2 w-96 border border-gray-200 rounded-md hover:border  "
+          placeholder="Search"
+        />
+
+        <button
+          data-testid="search-btn"
+          className=" p-2 px-4 bg-gray-700 text-white rounded-md hover:shadow-md"
+          onClick={() => {
+            // need to filter the data
+            // const data = filterMenuData(searchText, restaurantMenu);
+            // update the state - restaurants
+            // setResst(data);
+          }}
+        >
+          Search
+        </button>
+      </div>
+
       <div className="flex p-4 space-x-10 justify-center  mt-10 ">
         <img src={SHIMMER_IMAGE_URL} className="w-48  rounded-md" />
         <div className="flex flex-col space-y-2">

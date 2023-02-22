@@ -1,23 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { IMG_CDN_URL, NO_IMAGE_AVAILABLE } from "../constants";
 import useRestaurant from "../utils/useRestaurant";
-import Shimmer from "./Shimmer";
 import { addItem, removeItem } from "../utils/cartSlice";
-import { store } from "../utils/store";
 import ShimmerMenu from "./ShimmerMenu";
 
 export default function RestaurantMenu() {
   const { resId } = useParams();
-  const restaurantMenu = useRestaurant(resId);
+  const [restaurantMenu, setRestaurantMenu] = useRestaurant(resId);
+  // const [searchText, setSearchText] = useState("");
+
   const dispatch = useDispatch();
 
   function addFoodItem(item: object) {
     dispatch(addItem(item));
   }
 
-  console.log(restaurantMenu);
+  // function filterMenuData(searchText, restaurantMenu) {
+  //   console.log("called");
+  //   const filterData = Object.values(restaurantMenu?.menu?.items).filter(
+  //     (dish) => dish?.name?.toLowerCase()?.includes(searchText.toLowerCase())
+  //   );
+  //   return filterData;
+  // }
 
   return !restaurantMenu ? (
     <ShimmerMenu />
@@ -40,7 +46,37 @@ export default function RestaurantMenu() {
         </div>
       </div>
 
-      <div className=" flex flex-col border p-6 space-y-2 justify-center items-center">
+      {/* <div className="p-4 text-center m-4 ">
+        <input
+          data-testid="search-input"
+          type="text"
+          className="mx-3 p-2 px-2 w-96 border border-gray-200 rounded-md hover:border  "
+          placeholder="Search"
+          value={searchText}
+          onChange={(e) => {
+            //e.target.value is whatever i write
+            setSearchText(e.target.value);
+          }}
+        />
+
+        <button
+          data-testid="search-btn"
+          className=" p-2 px-4 bg-gray-700 text-white rounded-md hover:shadow-md"
+          onClick={() => {
+            // need to filter the data
+            const data: RestaurantMenuType = filterMenuData(
+              searchText,
+              restaurantMenu
+            );
+            // update the state - restaurants
+            setRestaurantMenu(data);
+          }}
+        >
+          Search
+        </button>
+      </div> */}
+
+      <div className=" flex flex-col space-y-2 justify-center items-center">
         <div>
           {Object.values(restaurantMenu?.menu?.items).map(
             (item: {

@@ -1,8 +1,31 @@
 import { useState, useEffect } from "react";
 import { FETCH_MENU_URL } from "../constants";
 
-export default function useRestaurant(resId: string): any {
-  const [restaurantMenu, setRestaurantMenu] = useState(null);
+export type RestaurantMenuType = {
+  cloudinaryImageId: string;
+  name: string;
+  city: string;
+  area: string;
+  avgRatingString: string;
+  costForTwoMsg: string;
+  menu: {
+    items: {
+      key: {
+        name: string;
+        id: string;
+        cloudinaryImageId: string;
+        price: number;
+      };
+    };
+  };
+};
+
+export default function useRestaurant(
+  resId: string
+): [RestaurantMenuType, Function] {
+  const [restaurantMenu, setRestaurantMenu] =
+    useState<RestaurantMenuType>(null);
+
   useEffect(() => {
     getRestaurantInfo();
   }, []);
@@ -13,5 +36,5 @@ export default function useRestaurant(resId: string): any {
     setRestaurantMenu(await json.data);
     console.log(restaurantMenu);
   }
-  return restaurantMenu;
+  return [restaurantMenu, setRestaurantMenu];
 }
