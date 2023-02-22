@@ -6,6 +6,7 @@ import useRestaurant from "../utils/useRestaurant";
 import Shimmer from "./Shimmer";
 import { addItem, removeItem } from "../utils/cartSlice";
 import { store } from "../utils/store";
+import ShimmerMenu from "./ShimmerMenu";
 
 export default function RestaurantMenu() {
   const { resId } = useParams();
@@ -19,7 +20,7 @@ export default function RestaurantMenu() {
   console.log(restaurantMenu);
 
   return !restaurantMenu ? (
-    <Shimmer />
+    <ShimmerMenu />
   ) : (
     <>
       <div className=" flex  p-16 space-x-6 justify-center mt-24 bg-gray-900 text-gray-100">

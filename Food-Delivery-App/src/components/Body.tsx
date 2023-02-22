@@ -21,6 +21,12 @@ function Body() {
     //api call
     getRestaurants(setAllRestaurants, setFilteredRestaurants);
   }, []);
+
+  useEffect(() => {
+    const data = filterData(searchText, allRestaurants);
+    // update the state - restaurants
+    setFilteredRestaurants(data);
+  }, [searchText]);
   //[] is dependency array,
   // if we dont pass anything in dependency, it renders every time comp is rendered
   //[] empt array, called once => after render cause its a callback
