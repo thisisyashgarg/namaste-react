@@ -57,9 +57,9 @@ const Header = () => {
             </Link>
           </li>
 
-          <li className="px-2 text-black text-l font-medium ">{user.name}</li>
+          {/* <li className="px-2 text-black text-l font-medium ">{user.name}</li> */}
 
-          {isLoggedIn === "true" ? (
+          {/* {isLoggedIn === "true" ? (
             <li className="px-2 hover:text-orange-400 text-l font-medium">
               <button onClick={() => setIsLoggiedIn("false")}>Logout</button>
             </li>
@@ -67,7 +67,7 @@ const Header = () => {
             <li className="px-2 hover:text-orange-400 text-l font-medium">
               <button onClick={() => setIsLoggiedIn("true")}>Login</button>
             </li>
-          )}
+          )} */}
         </ul>
       </div>
     </div>
