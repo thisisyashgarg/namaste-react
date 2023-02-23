@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { IMG_CDN_URL, NO_IMAGE_AVAILABLE } from "../constants";
 import useRestaurant from "../utils/useRestaurant";
+
 import { addItem, removeItem } from "../utils/cartSlice";
 import ShimmerMenu from "./ShimmerMenu";
 
@@ -45,36 +46,6 @@ export default function RestaurantMenu() {
           <h3 className="text-2xl">🍲 {restaurantMenu?.costForTwoMsg}</h3>
         </div>
       </div>
-
-      {/* <div className="p-4 text-center m-4 ">
-        <input
-          data-testid="search-input"
-          type="text"
-          className="mx-3 p-2 px-2 w-96 border border-gray-200 rounded-md hover:border  "
-          placeholder="Search"
-          value={searchText}
-          onChange={(e) => {
-            //e.target.value is whatever i write
-            setSearchText(e.target.value);
-          }}
-        />
-
-        <button
-          data-testid="search-btn"
-          className=" p-2 px-4 bg-gray-700 text-white rounded-md hover:shadow-md"
-          onClick={() => {
-            // need to filter the data
-            const data: RestaurantMenuType = filterMenuData(
-              searchText,
-              restaurantMenu
-            );
-            // update the state - restaurants
-            setRestaurantMenu(data);
-          }}
-        >
-          Search
-        </button>
-      </div> */}
 
       <div className=" flex flex-col space-y-2 justify-center items-center">
         <div>

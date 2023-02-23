@@ -15,8 +15,6 @@ function Body() {
 
   // const { user, setUser } = useContext(UserContext);
 
-  console.log("render");
-
   useEffect(() => {
     //api call
     getRestaurants(setAllRestaurants, setFilteredRestaurants);
@@ -27,10 +25,6 @@ function Body() {
     // update the state - restaurants
     setFilteredRestaurants(data);
   }, [searchText]);
-  //[] is dependency array,
-  // if we dont pass anything in dependency, it renders every time comp is rendered
-  //[] empt array, called once => after render cause its a callback
-  //[] non empty array => once after render + when depnedency changes
 
   if (!online) {
     return (

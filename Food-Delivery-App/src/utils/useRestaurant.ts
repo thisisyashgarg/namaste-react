@@ -34,7 +34,6 @@ export default function useRestaurant(
     const data = await fetch(`${FETCH_MENU_URL}${resId}`);
     const json = await data.json();
     setRestaurantMenu(await json.data);
-    console.log(restaurantMenu);
   }
   return [restaurantMenu, setRestaurantMenu];
 }

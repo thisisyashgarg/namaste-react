@@ -20,13 +20,9 @@ export default class About extends React.Component {
       <>
         <div className="p-3 space-y-3">
           <h1 className="text-3xl font-semibold">About Us Page</h1>
-          {/* <UserContext.Consumer>
-            {({ user }) => <h1 className="text-2xl p-2 m-2 ">{user.name}</h1>}
-          </UserContext.Consumer> */}
+
           <h1></h1>
           <p>This is the Namaste React Live Course - Finding the Path</p>
-          {/* <ProfileFunctional name="Yash" /> */}
-          {/* <ProfileFunctional name="First Child" /> */}
         </div>
       </>
     );

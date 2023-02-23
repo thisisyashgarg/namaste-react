@@ -14,7 +14,6 @@ export async function getRestaurants(
   try {
     const data = await fetch(FETCH_ALL_RESTAURANTS);
     const json = await data.json();
-    console.log("api call made");
     // console.log(json);
     setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
     setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
