@@ -22,7 +22,7 @@ const Shimmer = () => {
       <div className="flex flex-wrap m-0 p-0" data-testid="shimmer">
         {Array(10)
           .fill("")
-          .map((index) => (
+          .map((item, index) => (
             <div
               className="w-56 p-4 m-3 shadow-lg rounded-md space-y-3"
               key={index}

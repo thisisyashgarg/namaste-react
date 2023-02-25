@@ -1,4 +1,4 @@
-import { FETCH_ALL_RESTAURANTS } from "../constants";
+import { FETCH_ALL_RESTAURANTS, FETCH_MENU_URL } from "../constants";
 
 export function filterData(searchText, restaurants) {
   const filterData = restaurants.filter((restaurant) =>
@@ -12,6 +12,7 @@ export async function getRestaurants(
   setFilteredRestaurants
 ) {
   try {
+    // const data = await fetch("http://localhost:4001/");
     const data = await fetch(FETCH_ALL_RESTAURANTS);
     const json = await data.json();
     // console.log(json);
