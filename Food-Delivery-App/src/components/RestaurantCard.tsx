@@ -8,7 +8,7 @@ const RestrauntCard = ({
   lastMileTravelString,
 }) => {
   return (
-    <div className="w-56 p-4 m-3 h-72  border border-gray-100 bg-gray rounded-md overflow-scroll hover:shadow-lg bg-gray-50  ">
+    <div className="w-56 p-4 m-3 h-80 border border-gray-100 bg-gray rounded-md  hover:shadow-lg bg-gray-50  ">
       <img
         className="rounded-md"
         src={
