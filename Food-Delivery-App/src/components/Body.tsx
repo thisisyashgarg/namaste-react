@@ -43,7 +43,7 @@ function Body() {
         <input
           data-testid="search-input"
           type="text"
-          className="mx-3 p-2 px-2 w-96 border border-gray-200 rounded-md hover:border  "
+          className="mx-3 p-2 px-2 w-96 border border-gray-300 rounded-md focus:outline-none "
           placeholder="Search"
           value={searchText}
           onChange={(e) => {
