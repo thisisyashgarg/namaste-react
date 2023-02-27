@@ -37,7 +37,7 @@ function Body() {
         <input
           data-testid="search-input"
           type="text"
-          className="mx-3 p-2 px-2 w-96 border border-gray-300 rounded-md focus:outline-none "
+          className="mx-3 p-2 px-2 w-96  border border-gray-300 rounded-md focus:outline-none "
           placeholder="Search"
           value={searchText}
           onChange={(e) => {
@@ -48,7 +48,7 @@ function Body() {
 
         <button
           data-testid="search-btn"
-          className=" p-2 px-4 bg-gray-700 text-white rounded-md hover:shadow-md"
+          className=" p-2 px-4 bg-gray-700 text-white rounded-md hover:shadow-md max-sm:hidden"
           onClick={() => {
             //need to filter the data
             const data = filterData(searchText, allRestaurants);
@@ -71,7 +71,7 @@ function Body() {
       /> */}
 
       <div
-        className="flex flex-wrap m-0 p-0 justify-center"
+        className=" sm:flex flex-wrap m-0 p-0 justify-center   "
         data-testid="res-list"
       >
         {filteredRestaurants.map((restaurant) => {
@@ -79,7 +79,7 @@ function Body() {
             <Link
               to={`/restaurant/${restaurant.data.id}`}
               key={restaurant.data.id}
-              className="res-cards"
+              className="res-cards "
             >
               <RestaurantCard {...restaurant.data} />
             </Link>
