@@ -1,41 +1,35 @@
-import React, { useContext } from "react";
+import React from "react";
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
-import useOnline from "../utils/useOnline";
-import { getRestaurants } from "../utils/helper";
+
+import { ALL_RESTAURANTS_LIST } from "../mocks/mockData";
 
 function Body() {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
-  const online = useOnline();
 
   // const { user, setUser } = useContext(UserContext);
 
   useEffect(() => {
+    setFilteredRestaurants(ALL_RESTAURANTS_LIST);
     //api call
-    getRestaurants(setAllRestaurants, setFilteredRestaurants);
+    // getRestaurants(setAllRestaurants, setFilteredRestaurants);
   }, []);
 
   useEffect(() => {
-    const data = filterData(searchText, allRestaurants);
+    const data = filterData(searchText, ALL_RESTAURANTS_LIST);
     // update the state - restaurants
     setFilteredRestaurants(data);
   }, [searchText]);
 
-  if (!online) {
-    return (
-      <h1>Oops, you are offline, please check your internet connection</h1>
-    );
-  }
-
   //early return
-  if (!allRestaurants) return null;
+  if (!ALL_RESTAURANTS_LIST) return null;
 
-  return allRestaurants?.length === 0 ? (
+  return ALL_RESTAURANTS_LIST?.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="flex flex-col">
