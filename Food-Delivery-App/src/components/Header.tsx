@@ -7,9 +7,9 @@ import Logo from "../images/foodify.svg";
 
 const Title = () => {
   return (
-    <a href="/">
+    <Link to="/">
       <img data-testid="logo" className="h-20 p-2 mx-2" alt="logo" src={Logo} />
-    </a>
+    </Link>
   );
 };
 
