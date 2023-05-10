@@ -1,4 +1,6 @@
-# Foodify Food Ordering App ( Swiggy Clone )
+# Foodify Food Ordering App
+
+Foodify is a food exploration app.
 
 ## Steps to run it on your system
 
